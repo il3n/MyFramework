@@ -1,0 +1,43 @@
+{
+  "name": "MyFramework",
+  "version": "0.1.0",
+  "summary": "A short description of MyFramework.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/jeelun/MyFramework",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "jeelun": "lijun17@xiaomi.com"
+  },
+  "source": {
+    "git": "https://github.com/jeelun/MyFramework.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "libraries": [
+    "z",
+    "c++"
+  ],
+  "subspecs": [
+    {
+      "name": "Core",
+      "source_files": "MyFramework/Classes/Sources/**/*",
+      "public_header_files": "MyFramework/Classes/Sources/**/*.h",
+      "dependencies": {
+        "MyFramework/UnionPay": [
+
+        ]
+      }
+    },
+    {
+      "name": "UnionPay",
+      "source_files": "MyFramework/Classes/ThirdParty/Libraries/UnionPay/**/*.{h}",
+      "vendored_libraries": "MyFramework/Classes/ThirdParty/Libraries/UnionPay/**/*.a",
+      "private_header_files": "MyFramework/Classes/ThirdParty/Libraries/UnionPay/**/*.h"
+    }
+  ]
+}

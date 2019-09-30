@@ -11,32 +11,32 @@ Pod::Spec.new do |s|
   s.version          = '0.1.0'
   s.summary          = 'A short description of MyFramework.'
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
   s.description      = <<-DESC
 TODO: Add long description of the pod here.
                        DESC
 
   s.homepage         = 'https://github.com/jeelun/MyFramework'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'jeelun' => 'lijun17@xiaomi.com' }
-  s.source           = { :git => 'https://github.com/jeelun/MyFramework.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.author           = { 'xxx' => 'xxx@xxx.com' }
+  s.source           = { :git => 'https://github.com/xxx/MyFramework.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'MyFramework/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'MyFramework' => ['MyFramework/Assets/*.png']
-  # }
+  s.libraries     = 'z', 'c++'
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.subspec 'Core' do |sss|
+      sss.source_files = 'MyFramework/Classes/Sources/**/*'
+      sss.public_header_files = 'MyFramework/Classes/Sources/**/*.h'
+      
+      sss.dependency 'MyFramework/UnionPay'
+  end
+  
+  # 银联云闪付
+  s.subspec 'UnionPay' do |sss|
+      sss.source_files = 'MyFramework/Classes/ThirdParty/Libraries/UnionPay/**/*.{h}'
+      sss.vendored_libraries = 'MyFramework/Classes/ThirdParty/Libraries/UnionPay/**/*.a'
+      sss.private_header_files = 'MyFramework/Classes/ThirdParty/Libraries/UnionPay/**/*.h'
+  end
+  
 end
