@@ -18,7 +18,7 @@ TODO: Add long description of the pod here.
   s.homepage         = 'https://github.com/jeelun/MyFramework'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'xxx' => 'xxx@xxx.com' }
-  s.source           = { :git => 'https://github.com/xxx/MyFramework.git', :tag => s.version.to_s }
+  s.source           = { :git => 'git@github.com:jeelun/MyFramework.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '8.0'
 
